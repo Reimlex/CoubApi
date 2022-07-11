@@ -76,7 +76,7 @@ var_dump($result);
 ## Channel followers
 ```php
 getChannelFollowers(
-  string $ID,
+  int $ID,
   int $PAGE,
   int $PER_PAGE = 10,
   int $RETURN_MODE = RETURN_ARRAY
@@ -94,7 +94,7 @@ getChannelFollowers(
 <?php
 require 'CoubApi.php';
 $CoubApi = new CoubApi();
-$result = $CoubApi->getChannelFollowers('2227934', 1, 10, RETURN_ARRAY);
+$result = $CoubApi->getChannelFollowers(2227934, 1, 10, RETURN_ARRAY);
 var_dump($result);
 ```
 
