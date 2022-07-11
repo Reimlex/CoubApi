@@ -71,7 +71,7 @@ var_dump($result);
 ```
 
 
-## Channel coubs
+## Channel Coubs
 
 ```php
 getTimelineChannel(
@@ -214,4 +214,102 @@ $result = $CoubApi->getTimelineBookmarks('remember_token', 1, 10, true, ORDER_BY
 var_dump($result);
 ```
 
-## 
+## Hot
+
+```php
+getTimelineHot(
+  int $PAGE,
+  int $PER_PAGE = 10,
+  string $ORDER_BY = ORDER_BY__DAILY,
+  int $RETURN_MODE = RETURN_ARRAY
+)
+```
+
+### Parameters
+-   `$PAGE` - page number.
+-   `$PER_PAGE` - number of coubs per page (from 1 to 25).
+-   `$ORDER_BY` - daily (`ORDER_BY__DAILY`), weekly (`ORDER_BY__WEEKLY`), monthly (`ORDER_BY__MONTHLY`), quarterly (`ORDER_BY__QUARTER`) or six months (`ORDER_BY__HALF`).
+-   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
+
+### Example
+```php
+<?php
+require 'CoubApi.php';
+$CoubApi = new CoubApi();
+$result = $CoubApi->getTimelineHot(1, 10, ORDER_BY__DATE, RETURN_ARRAY);
+var_dump($result);
+```
+
+## Rising
+
+```php
+getTimelineRising(
+  int $PAGE,
+  int $PER_PAGE = 10,
+  int $RETURN_MODE = RETURN_ARRAY
+)
+```
+
+### Parameters
+-   `$PAGE` - page number.
+-   `$PER_PAGE` - number of coubs per page (from 1 to 25).
+-   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
+
+### Example
+```php
+<?php
+require 'CoubApi.php';
+$CoubApi = new CoubApi();
+$result = $CoubApi->getTimelineRising(1, 10, RETURN_ARRAY);
+var_dump($result);
+```
+
+
+## Fresh
+```php
+getTimelineFresh(
+  int $PAGE,
+  int $PER_PAGE = 10,
+  int $RETURN_MODE = RETURN_ARRAY
+)
+```
+
+### Parameters
+-   `$PAGE` - page number.
+-   `$PER_PAGE` - number of coubs per page (from 1 to 25).
+-   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
+
+### Example
+```php
+<?php
+require 'CoubApi.php';
+$CoubApi = new CoubApi();
+$result = $CoubApi->getTimelineFresh(1, 10, RETURN_ARRAY);
+var_dump($result);
+```
+
+## Random
+
+```php
+getTimelineRandom(
+  int $PAGE, 
+  int $PER_PAGE = 10,
+  string $ORDER_BY = null,
+  int $RETURN_MODE = RETURN_ARRAY
+)
+```
+
+### Parameters
+-   `$PAGE` - page number.
+-   `$PER_PAGE` - number of coubs per page (from 1 to 25).
+-   -   `$ORDER_BY` - popular (`null`) or top (`ORDER_BY__TOP`).
+-   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
+
+### Example
+```php
+<?php
+require 'CoubApi.php';
+$CoubApi = new CoubApi();
+$result = $CoubApi->getTimelineRandom(1, 10, null, RETURN_ARRAY);
+var_dump($result);
+```
