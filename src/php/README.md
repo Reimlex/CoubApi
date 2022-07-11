@@ -49,7 +49,7 @@ vr_dump($result);
 
 
 ## Channel data
-###### Page link: https://coub.com/coubassistant.
+###### Page link: https://coub.com/cinemagraphs.
 
 ```php
 getChannel(
@@ -68,13 +68,39 @@ getChannel(
 <?php
 require 'CoubApi.php';
 $CoubApi = new CoubApi();
-$result = $CoubApi->getChannel('coubassistant', RETURN_ARRAY);
+$result = $CoubApi->getChannel('cinemagraphs', RETURN_ARRAY);
+var_dump($result);
+```
+
+
+## Channel followers
+```php
+getChannelFollowers(
+  string $ID,
+  int $PAGE,
+  int $PER_PAGE = 10,
+  int $RETURN_MODE = RETURN_ARRAY
+)
+```
+
+### Parameters
+-   `$ID` - сhannel ID.
+-   `$PAGE` - page number.
+-   `$PER_PAGE` - number of coubs per page (from 1 to 25).
+-   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
+
+### Example
+```php
+<?php
+require 'CoubApi.php';
+$CoubApi = new CoubApi();
+$result = $CoubApi->getChannelFollowers('2227934', 1, 10, RETURN_ARRAY);
 var_dump($result);
 ```
 
 
 ## Channel Coubs
-###### Page link: https://coub.com/coubassistant.
+###### Page link: https://coub.com/cinemagraphs.
 
 ```php
 getTimelineChannel(
@@ -101,7 +127,7 @@ getTimelineChannel(
 <?php
 require 'CoubApi.php';
 $CoubApi = new CoubApi();
-$result = $CoubApi->getTimelineChannel('coubassistant', COUB, 1, 10, ORDER_BY__DATE, RETURN_ARRAY);
+$result = $CoubApi->getTimelineChannel('cinemagraphs', COUB, 1, 10, ORDER_BY__DATE, RETURN_ARRAY);
 var_dump($result);
 ```
 
