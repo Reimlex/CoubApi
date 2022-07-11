@@ -8,4 +8,3 @@ CoubApi is a library for using the [coub.com](https://coub.com) API.
 | -------------- |:------------------:| 
 | PHP            | :white_check_mark: | 
 | C#             | In developing      |
-| Java (Android) | In developing      | 
