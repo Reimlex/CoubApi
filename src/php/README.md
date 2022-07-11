@@ -71,6 +71,37 @@ var_dump($result);
 ```
 
 
+## Channel coubs
+
+```php
+getTimelineChannel(
+  string $PERMALINK,
+  string $TYPE,
+  int $PAGE,
+  int $PER_PAGE = 10,
+  string $ORDER_BY = ORDER_BY__NEWEST,
+  int $RETURN_MODE = RETURN_ARRAY
+)
+```
+
+### Parameters
+-   `$PERMALINK` - short link to the channel.
+-   `$TYPE` - Coubs (`COUB`), Reposts (`RECOUBS`) or Stories (`STORIES`).
+-   `$PAGE` - page number.
+-   `$PER_PAGE` - number of coubs per page (from 1 to 25).
+-   `$ALL` - all channels.
+-   `$ORDER_BY` - most recent (`ORDER_BY__NEWEST`), most liked (`ORDER_BY__LIKES_COUNT`), most viewed (`ORDER_BY__VIEWS_COUNT`), oldest (`ORDER_BY__OLDEST`) or random (`ORDER_BY__RANDOM`).
+-   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
+
+```php
+<?php
+require 'CoubApi.php';
+$CoubApi = new CoubApi();
+$result = $CoubApi->getTimelineChannel('coubassistant', COUB, 1, 10, ORDER_BY__DATE, RETURN_ARRAY);
+var_dump($result);
+```
+
+
 ## Feed
 
 ```php
@@ -96,7 +127,6 @@ $CoubApi = new CoubApi();
 $result = $CoubApi->getFeed('remember_token', 1, 10, RETURN_ARRAY);
 var_dump($result);
 ```
-
 
 ## Story feed
 
@@ -154,3 +184,34 @@ $CoubApi = new CoubApi();
 $result = $CoubApi->getTimelineLikes('remember_token', 1, 10, true, ORDER_BY__DATE, RETURN_ARRAY);
 var_dump($result);
 ```
+
+## Bookmarks
+
+```php
+getTimelineBookmarks(
+  string $REMEMBER_TOKEN,
+  int $PAGE,
+  int $PER_PAGE = 10,
+  string $ORDER_BY = ORDER_BY__DATE,
+  int $RETURN_MODE = RETURN_ARRAY
+)
+```
+
+### Parameters
+-   `$REMEMBER_TOKEN` - coub.com account token.
+-   `$PAGE` - page number.
+-   `$PER_PAGE` - number of coubs per page (from 1 to 25).
+-   `$ALL` - all channels.
+-   `$ORDER_BY` - recent (`ORDER_BY__DATE`), top (`ORDER_BY__LIKES_COUNT`), views count (`ORDER_BY__VIEWS_COUNT`), oldest (`ORDER_BY__OLDEST`) or random (`ORDER_BY__RANDOM`).
+-   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
+
+### Example
+```php
+<?php
+require 'CoubApi.php';
+$CoubApi = new CoubApi();
+$result = $CoubApi->getTimelineBookmarks('remember_token', 1, 10, true, ORDER_BY__DATE, RETURN_ARRAY);
+var_dump($result);
+```
+
+## 
