@@ -1,5 +1,5 @@
 ## Coub
-Page link: https://coub.com/view/32h6cs.
+###### Page link: https://coub.com/view/32h6cs.
 
 ```php
 getCoub(
@@ -49,7 +49,7 @@ vr_dump($result);
 
 
 ## Channel data
-Page link: https://coub.com/coubassistant.
+###### Page link: https://coub.com/coubassistant.
 
 ```php
 getChannel(
@@ -74,7 +74,7 @@ var_dump($result);
 
 
 ## Channel Coubs
-Page link: https://coub.com/coubassistant.
+###### Page link: https://coub.com/coubassistant.
 
 ```php
 getTimelineChannel(
@@ -106,7 +106,7 @@ var_dump($result);
 
 
 ## Feed
-Page link: https://coub.com/feed.
+###### Page link: https://coub.com/feed.
 
 ```php
 getFeed(
@@ -133,7 +133,7 @@ var_dump($result);
 ```
 
 ## Story feed
-Page link: https://coub.com/stories.
+###### Page link: https://coub.com/stories.
 
 ```php
 getFeedStories(
@@ -161,7 +161,7 @@ var_dump($result);
 
 
 ## Likes
-Page link: https://coub.com/likes.
+###### Page link: https://coub.com/likes.
 
 ```php
 getTimelineLikes(
@@ -192,7 +192,7 @@ var_dump($result);
 ```
 
 ## Bookmarks
-Page link: https://coub.com/bookmarks.
+###### Page link: https://coub.com/bookmarks.
 
 ```php
 getTimelineBookmarks(
@@ -222,7 +222,7 @@ var_dump($result);
 ```
 
 ## Hot
-Page link: https://coub.com/hot.
+###### Page link: https://coub.com/hot.
 
 ```php
 getTimelineHot(
@@ -249,7 +249,7 @@ var_dump($result);
 ```
 
 ## Rising
-Page link: https://coub.com/rising.
+###### Page link: https://coub.com/rising.
 
 ```php
 getTimelineRising(
@@ -275,7 +275,7 @@ var_dump($result);
 
 
 ## Fresh
-Page link: https://coub.com/fresh.
+###### Page link: https://coub.com/fresh.
 
 ```php
 getTimelineFresh(
@@ -300,7 +300,7 @@ var_dump($result);
 ```
 
 ## Random
-Page link: https://coub.com/random, https://coub.com/random/top.
+###### Page link: https://coub.com/random, https://coub.com/random/top.
 
 ```php
 getTimelineRandom(
