@@ -23,31 +23,6 @@ $result = $CoubApi->getCoub('32h6cs', GET_FROM_API, RETURN_ARRAY);
 var_dump($result);
 ```
 
-
-## Coub Segments
-
-```php
-getCoubSegments(
-  string $PERMALINK,
-  int $RETURN_MODE = RETURN_ARRAY
-)
-```
-
-### Parameters
--   `$PERMALINK` - short link to video.
--   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
-
-
-### Example
-```php
-<?php
-require 'CoubApi.php';
-$CoubApi = new CoubApi();
-$result = $CoubApi->getCoubSegments('32h6cs', GET_FROM_API, RETURN_ARRAY);
-vr_dump($result);
-````
-
-
 ## Channel data
 ###### Page link: https://coub.com/cinemagraphs.
 
