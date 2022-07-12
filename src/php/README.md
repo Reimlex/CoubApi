@@ -130,7 +130,7 @@ getTimelineFeed(
 <?php
 require 'CoubApi.php';
 $CoubApi = new CoubApi();
-$result = $CoubApi->getTimelineFeed('remember_token', 1, 10, RETURN_ARRAY);
+$result = $CoubApi->getTimelineFeed('64868ab460e1384d3c385e91199876c2d8d07445', 1, 10, RETURN_ARRAY);
 var_dump($result);
 ```
 
@@ -157,7 +157,7 @@ getTimelineFeedStories(
 <?php
 require 'CoubApi.php';
 $CoubApi = new CoubApi();
-$result = $CoubApi->getTimelineFeedStories('remember_token', 1, 10, RETURN_ARRAY);
+$result = $CoubApi->getTimelineFeedStories('64868ab460e1384d3c385e91199876c2d8d07445', 1, 10, RETURN_ARRAY);
 var_dump($result);
 ```
 
@@ -189,7 +189,7 @@ getTimelineLikes(
 <?php
 require 'CoubApi.php';
 $CoubApi = new CoubApi();
-$result = $CoubApi->getTimelineLikes('remember_token', 1, 10, true, ORDER_BY__DATE, RETURN_ARRAY);
+$result = $CoubApi->getTimelineLikes('64868ab460e1384d3c385e91199876c2d8d07445', 1, 10, true, ORDER_BY__DATE, RETURN_ARRAY);
 var_dump($result);
 ```
 
@@ -219,7 +219,7 @@ getTimelineBookmarks(
 <?php
 require 'CoubApi.php';
 $CoubApi = new CoubApi();
-$result = $CoubApi->getTimelineBookmarks('remember_token', 1, 10, true, ORDER_BY__DATE, RETURN_ARRAY);
+$result = $CoubApi->getTimelineBookmarks('64868ab460e1384d3c385e91199876c2d8d07445', 1, 10, true, ORDER_BY__DATE, RETURN_ARRAY);
 var_dump($result);
 ```
 
@@ -445,5 +445,29 @@ getStories(
 require 'CoubApi.php';
 $CoubApi = new CoubApi();
 $result = $CoubApi->getStories(1, 10, null, RETURN_ARRAY);
+var_dump($result);
+```
+
+
+## Search logs
+
+```php
+SearchLogs(
+  string $REMEMBER_TOKEN, 
+  int $RETURN_MODE = RETURN_ARRAY
+)
+```
+
+### Parameters
+-   `$REMEMBER_TOKEN` - coub.com account token.
+-   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
+
+
+### Example
+```php
+<?php
+require 'CoubApi.php';
+$CoubApi = new CoubApi();
+$result = $CoubApi->getSearchLogs('64868ab460e1384d3c385e91199876c2d8d07445', RETURN_ARRAY);
 var_dump($result);
 ```
