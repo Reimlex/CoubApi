@@ -478,7 +478,7 @@ var_dump($result);
 ## Search logs
 
 ```php
-SearchLogs(
+getSearchLogs(
   string $REMEMBER_TOKEN, 
   int $RETURN_MODE = RETURN_ARRAY
 )
