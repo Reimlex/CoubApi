@@ -40,11 +40,9 @@ class CoubApi
         switch ($GET_FROM) {
             case 0:
                 return $this->returnType($this->sendRequest('http://coub.com/api/v2/coubs/' . $PERMALINK), $RETURN_MODE);
-                break;
             case 1:
                 preg_match_all('@<script id=\'coubPageCoubJson\' type=\'text/json\'>(.+?)</script>@ms', $this->sendRequest('https://coub.com/view/' . $PERMALINK), $json, PREG_SET_ORDER, 0);
                 return $this->returnType($json[0][1], $RETURN_MODE);
-                break;
             default:
                 return null;
         }
