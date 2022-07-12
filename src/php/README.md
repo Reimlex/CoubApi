@@ -342,7 +342,7 @@ getTimelineRandom(
 ### Parameters
 -   `$PAGE` - page number.
 -   `$PER_PAGE` - number of coubs per page (from 1 to 25).
--   -   `$ORDER_BY` - popular (`null`) or top (`ORDER_BY__TOP`).
+-   `$ORDER_BY` - popular (`null`) or top (`ORDER_BY__TOP`).
 -   `$RETURN_MODE` - returns the query result in an array (`RETURN_ARRAY`), object (`RETURN_OBJECT`) or json (`RETURN_JSON`).
 
 ### Example
