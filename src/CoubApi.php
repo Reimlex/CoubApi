@@ -27,6 +27,8 @@ define('ORDER_BY__MONTHLY', 'monthly');
 define('ORDER_BY__QUARTER', 'quarter');
 define('ORDER_BY__HALF', 'half');
 define('ORDER_BY__TOP', 'top');
+define('ORDER_BY__TOP_OF_THE_MONTH', 'top_of_the_month');
+define('ORDER_BY__UNDERVALUED', 'undervalued');
 
 
 define('COUB', 'simples');
@@ -71,6 +73,7 @@ class CoubApi
         ]), $RETURN_MODE);
     }
 
+
     public function getTimelineChannel(string $PERMALINK, string $TYPE, int $PAGE, int $PER_PAGE = 10, string $ORDER_BY = ORDER_BY__NEWEST, int $RETURN_MODE = RETURN_ARRAY)
     {
         return $this->returnType($this->sendRequest('https://coub.com/api/v2/timeline/channel/' . $PERMALINK, [
@@ -78,6 +81,14 @@ class CoubApi
             'page' => $PAGE,
             'per_page' => $PER_PAGE,
             'order_by' => $ORDER_BY
+        ]), $RETURN_MODE);
+    }
+
+    public function getFeaturedChannels(int $PAGE, int $PER_PAGE = 10, int $RETURN_MODE = RETURN_ARRAY)
+    {
+        return $this->returnType($this->sendRequest('https://coub.com/api/v2/channels/featured_channels', [
+            'page' => $PAGE,
+            'per_page' => $PER_PAGE,
         ]), $RETURN_MODE);
     }
 
@@ -121,7 +132,9 @@ class CoubApi
 
     public function getTimelineHot(int $PAGE, int $PER_PAGE = 10, string $ORDER_BY = ORDER_BY__DAILY, int $RETURN_MODE = RETURN_ARRAY)
     {
-        return $this->returnType($this->sendRequest('https://coub.com/api/v2/timeline/subscriptions/' . $ORDER_BY, [
+        return $this->returnType($this->sendRequest(
+            'https://coub.com/api/v2/timeline/subscriptions/' . $ORDER_BY,
+            [
                 'page' => $PAGE,
                 'per_page' => $PER_PAGE
             ]
@@ -156,7 +169,9 @@ class CoubApi
 
     public function getTimelineCommunityHot(string $PERMALINK, int $PAGE, int $PER_PAGE = 10, string $ORDER_BY = ORDER_BY__DAILY, int $RETURN_MODE = RETURN_ARRAY)
     {
-        return $this->returnType($this->sendRequest("https://coub.com/api/v2/timeline/community/$PERMALINK/$ORDER_BY", [
+        return $this->returnType($this->sendRequest(
+            "https://coub.com/api/v2/timeline/community/$PERMALINK/$ORDER_BY",
+            [
                 'page' => $PAGE,
                 'per_page' => $PER_PAGE
             ]
@@ -180,6 +195,37 @@ class CoubApi
         ]), $RETURN_MODE);
     }
 
+    public function getTimelineCoubOfTheDay(int $PAGE, int $PER_PAGE = 10, string $ORDER_BY = null, int $RETURN_MODE = RETURN_ARRAY)
+    {
+        return $this->returnType($this->sendRequest("https://coub.com/api/v2/timeline/explore/coub_of_the_day", [
+            'scope' => 'all',
+            'page' => $PAGE,
+            'per_page' => $PER_PAGE,
+            'order_by' => isset($ORDER_BY) ? $ORDER_BY : ''
+        ]), $RETURN_MODE);
+    }
+
+    public function getTimelineFeatured(int $PAGE, int $PER_PAGE = 10, string $ORDER_BY = null, int $RETURN_MODE = RETURN_ARRAY)
+    {
+        return $this->returnType($this->sendRequest("https://coub.com/api/v2/timeline/explore", [
+            'scope' => 'all',
+            'page' => $PAGE,
+            'per_page' => $PER_PAGE,
+            'order_by' => isset($ORDER_BY) ? $ORDER_BY : ''
+        ]), $RETURN_MODE);
+    }
+
+    public function getTags(string $PERMALINK, int $PAGE, int $PER_PAGE = 10, string $ORDER_BY = ORDER_BY__NEWEST_POPULAR, int $RETURN_MODE = RETURN_ARRAY)
+    {
+        return $this->returnType($this->sendRequest("https://coub.com/api/v2/timeline/tag/$PERMALINK", [
+            'scope' => 'all',
+            'page' => $PAGE,
+            'per_page' => $PER_PAGE,
+            'order_by' => $ORDER_BY
+        ]), $RETURN_MODE);
+    }
+
+
     public function getStories(int $PAGE, int $PER_PAGE = 10, string $ORDER_BY = null, int $RETURN_MODE = RETURN_ARRAY)
     {
         return $this->returnType($this->sendRequest('https://coub.com/api/v2/stories/featured', [
@@ -190,6 +236,7 @@ class CoubApi
             'order_by' => isset($ORDER_BY) ? $ORDER_BY : ''
         ]), $RETURN_MODE);
     }
+
 
     public function getSearchLogs(string $REMEMBER_TOKEN, int $RETURN_MODE = RETURN_ARRAY)
     {
