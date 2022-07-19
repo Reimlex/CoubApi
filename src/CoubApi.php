@@ -1,7 +1,7 @@
 <?php
 /*
  * CoubApi is a library for using the coub.com API
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Reimlex
  * 
  * GitHub: https://github.com/Reimlex/CoubApi
