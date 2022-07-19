@@ -4,6 +4,24 @@ CoubApi is a library for using the [coub.com](https://coub.com) API.
 :warning: **Please use the [coub.com](https://coub.com) API wisely and do not abuse it.** :warning:
 
 # Usage
+0. [Coub](#coub)
+1. [Channel data](#channel-data)
+2. [Channel followings](#channel-followings)
+3. [Channel followers](#channel-followers)
+4. [Channel Coubs](#channel-coubs)
+5. [Feed](#feed)
+6. [Story feed](#story-feed)
+7. [Likes](#likes)
+8. [Bookmarks](#bookmarks)
+9. [Hot](#hot)
+10. [Rising](#rising)
+11. [Fresh](#fresh)
+12. [Random](#random)
+13. [Community – Hot](#community--hot)
+14. [Community – Rising](#community--rising)
+15. [Community – Fresh](#community--fresh)
+16. [Stories](#stories)
+17. [Search logs](#search-logs)
 
 ## Coub
 ###### Page link: https://coub.com/view/32h6cs.
